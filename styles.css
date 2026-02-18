@@ -1,0 +1,365 @@
+ /* Color Variables */
+
+ :root {
+     --v-primary: #FFFFFF;
+     --v-secondary: #000000;
+ }
+
+ /* Reset */
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Montserrat", sans-serif;
+     color: var(--v-secondary);
+ }
+
+ *::selection {
+     background: var(--v-secondary);
+     color: var(--v-primary);
+ }
+
+ body {
+     margin: 0;
+     background: var(--v-primary);
+ }
+
+ @font-face {
+     font-family: "Montserrat";
+     src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+ }
+
+ @font-face {
+     font-family: "Antro Vectra";
+     src: url(./assets/fonts/Antro_Vectra.otf) format("opentype");
+ }
+
+ /* Navbar */
+
+ .navbar {
+     position: sticky;
+     top: 0;
+     padding: 1.3rem 0;
+     z-index: 1000;
+     backdrop-filter: blur(10px);
+     border-bottom: solid 1px var(--v-secondary);
+ }
+
+ .nav-links {
+     list-style: none;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 15px;
+     gap: 10rem;
+     margin: 0;
+     padding: 0;
+ }
+
+ .nav-links a {
+     text-decoration: none;
+     color: var(--v-white);
+     font-weight: 500;
+     position: relative;
+     transition: 0.3s ease;
+ }
+
+ .nav-links a::after {
+     content: "";
+     position: absolute;
+     left: 50%;
+     bottom: -6px;
+     width: 100%;
+     height: 2px;
+     background: var(--v-secondary);
+     transform: translateX(-50%) scaleX(0);
+     transform-origin: center;
+     transition: transform 0.3s ease;
+ }
+
+ .nav-links .after-off::after {
+     display: none;
+ }
+
+ .nav-icon img {
+     width: 50px;
+ }
+
+ .nav-icon {
+     transition: 0.3s ease;
+ }
+
+ .nav-icon:hover {
+     transform: scale(1.2);
+ }
+
+ .nav-links a:hover {
+     opacity: 0.7;
+ }
+
+ .nav-links a:hover::after {
+     transform: translateX(-50%) scaleX(1);
+ }
+
+
+ /* Presentation Header Section */
+
+ .presentation {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom: solid 1px var(--v-secondary);
+ }
+
+ .presentation-content {
+     width: 80%;
+     display: grid;
+     grid-template-columns: 1fr auto 1fr;
+     align-items: center;
+     gap: 6rem;
+     color: var(--v-white);
+ }
+
+ .presentation-left {
+     text-align: right;
+ }
+
+ .presentation-left h1 {
+     font-size: 3rem;
+     margin: 0;
+     color: var(--v-secondary);
+ }
+
+ .presentation-left h2 {
+     font-size: 1.2rem;
+     font-weight: 400;
+     margin-top: 0.5rem;
+ }
+
+ .presentation-center img {
+     width: 350px;
+     height: 100vh;
+     margin-top: 0px;
+     object-fit: cover;
+ }
+
+ .presentation-right {
+     text-align: left;
+ }
+
+ .presentation-right p {
+     line-height: 1.6;
+     font-size: 1.1rem;
+ }
+
+ /* Jobs Section */
+
+ .jobs {
+     min-height: 100vh;
+     margin-top: 0px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     padding: 6rem 0;
+ }
+
+ .jobs-content {
+     width: 80%;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 5rem;
+ }
+
+ .job-card {
+     background: var(--v-secondary-glass);
+     backdrop-filter: blur(8px);
+     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+     border-radius: 2px;
+     overflow: hidden;
+     transition: 0.5s ease;
+     text-align: center;
+ }
+
+ .job-card img {
+     width: 100%;
+     height: 700px;
+     object-fit: cover;
+ }
+
+ .job-card h3 {
+     color: var(--v-white);
+     padding: 1rem;
+     margin: 0;
+     font-weight: 800;
+     letter-spacing: 1.5px;
+ }
+
+ .job-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
+     background: var(--v-primary-glass);
+ }
+
+ /* Skills Section */
+
+ .skills {
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 0rem 0;
+ }
+
+ .skills-container {
+     width: 80%;
+ }
+
+ .skills-title {
+     text-align: center;
+     margin-bottom: 100px;
+     margin-top: -440px;
+ }
+
+ .skills-title h1 {
+     color: var(--v-white);
+     letter-spacing: 4px;
+     font-size: 7rem;
+     font-weight: 500;
+     font-family: "Antro Vectra", sans-serif;
+ }
+
+ .skills-content {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2.5rem;
+ }
+
+ .skill-card {
+     padding: 2.5rem;
+     backdrop-filter: blur(8px);
+     border: 1.5px solid var(--v-secondary);
+     border-radius: 2px;
+     text-align: center;
+     transition: 0.4s ease;
+ }
+
+ .skill-card h3 {
+     color: var(--v-white);
+     margin: 0;
+     letter-spacing: 1.5px;
+     font-weight: 800;
+     text-transform: uppercase;
+ }
+
+ .skill-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
+ }
+
+ /* Footer */
+
+ .footer {
+     min-height: 50vh;
+     background: var(--v-secondary);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 4rem 0;
+ }
+
+ .footer-container {
+     width: 85%;
+     max-width: 1300px;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap: 8rem;
+     align-items: start;
+ }
+
+ .footer-left img {
+     width: 200px;
+     object-fit: cover;
+ }
+
+ .footer-center {
+     margin-top: 50px;
+     margin-right: 60px;
+     text-align: center;
+ }
+
+ .footer-center h2 {
+     margin-bottom: 5rem;
+     font-size: 2rem;
+     letter-spacing: 3px;
+     color: var(--v-primary);
+ }
+
+ .social-icons {
+     display: flex;
+     justify-content: center;
+     gap: 3rem;
+     margin-bottom: 5rem;
+ }
+
+ .social-icons img {
+     width: 40px;
+     transition: 0.3s ease;
+     color: var(--v-primary);
+ }
+
+ .social-icons img:hover {
+     transform: translateY(-4px) scale(1.2);
+     filter: drop-shadow(0 0 3px var(--v-primary));
+ }
+
+ .contact-info p {
+     margin: 0.3rem 0;
+     color: var(--v-primary);
+     font-size: 18px;
+ }
+
+ .footer-right form {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     color: var(--v-primary);
+ }
+
+ .footer-right h2 {
+     margin-bottom: 1rem;
+     color: var(--v-primary);
+     font-size: 1.7rem;
+     letter-spacing: 3px;
+ }
+
+ .footer-right input,
+ .footer-right textarea {
+     padding: 0.8rem;
+     border: 1px solid var(--v-primary);
+     background: var(--v-primary);
+     color: var(--v-secondary);
+     border-radius: 4px;
+     outline: none;
+ }
+
+ .footer-right button {
+     padding: 0.8rem;
+     border: none;
+     background: var(--v-primary);
+     color: var(--v-secondary);
+     border: solid 2px var(--v-primary);
+     border-radius: 4px;
+     font-weight: 600;
+     letter-spacing: 2px;
+     cursor: pointer;
+     transition: 0.3s ease;
+ }
+
+ .footer-right button:hover {
+     background: var(--v-secondary);
+     color: var(--v-primary);
+ }
