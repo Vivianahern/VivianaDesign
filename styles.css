@@ -183,11 +183,13 @@
      text-align: center;
  }
 
- .job-card img {
-     width: 100%;
-     height: 700px;
-     object-fit: cover;
- }
+.job-card video {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
 
  .job-card h3 {
      color: var(--v-white);
@@ -197,16 +199,45 @@
      letter-spacing: 1.5px;
  }
 
+  .job-card img {
+     width: 100%;
+     height: 700px;
+     object-fit: cover;
+ }
+
  .job-card:hover {
      transform: translateY(-4px);
      box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.5);
      background: var(--v-primary-glass);
  }
 
+ /* Figma Section */
+
+.figma {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0;
+}
+
+.figma-content {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.figma iframe {
+    width: 100%;
+    height: 900px;
+    border-radius: 5px;
+    border: 1px solid var(--v-secondary);
+}
+
  /* Skills Section */
 
  .skills {
-     min-height: 100vh;
+     min-height: 55vh;
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -216,12 +247,6 @@
 
  .skills-container {
      width: 80%;
- }
-
- .skills-title {
-     text-align: center;
-     margin-bottom: 100px;
-     margin-top: -440px;
  }
 
  .skills-title h1 {
@@ -273,15 +298,15 @@
 
  .footer-container {
      width: 85%;
-     max-width: 1300px;
+     max-width: 1600px;
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
-     gap: 8rem;
+     gap: 10rem;
      align-items: start;
  }
 
  .footer-left img {
-     width: 200px;
+     width: 400px;
      object-fit: cover;
  }
 
